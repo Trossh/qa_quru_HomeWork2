@@ -1,6 +1,7 @@
 from math import pi
 import random
 
+
 def test_greeting():
     """
     Напишите программу, которая выводит на экран приветствие.
@@ -8,10 +9,12 @@ def test_greeting():
     name = "Анна"
     age = 25
     # TODO Сформируйте нужную строку
-    output= f"Привет, {name}! Тебе {age} лет."
+    output = f"Привет, {name}! Тебе {age} лет."
     # Проверяем результат
     print(output)
     assert output == "Привет, Анна! Тебе 25 лет."
+
+
 def test_rectangle():
     """
     Напишите программу, которая берет длину и ширину прямоугольника
@@ -20,11 +23,13 @@ def test_rectangle():
     a = 10
     b = 20
     # TODO сосчитайте периметр
-    perimeter = (10+20)*2
+    perimeter = (10 + 20) * 2
     assert perimeter == 60
     # TODO сосчитайте площадь
-    area = 10*20
+    area = 10 * 20
     assert area == 200
+
+
 def test_circle():
     """
     Напишите программу, которая берет радиус круга и выводит на экран его длину и площадь.
@@ -32,22 +37,26 @@ def test_circle():
     """
     r = 23
     # TODO сосчитайте площадь
-    area = pi*r**2
+    area = pi * r ** 2
     assert area == 1661.9025137490005
     print(area)
     # TODO сосчитайте длину окружности
-    length = 2*pi*r
+    length = 2 * pi * r
     print(length)
     assert length == 144.51326206513048
+
+
 def test_random_list():
     """
     Создайте список из 10 случайных чисел от 1 до 100 и отсортируйте его по возрастанию.
     """
     # TODO создайте список
-    l = [random.randint (1, 100) for _ in range (10)]
+    l = [random.randint(1, 100) for _ in range(10)]
     l.sort()
     assert len(l) == 10
     assert l[0] < l[-1]
+
+
 def test_unique_elements():
     """
     Удалите из списка все повторяющиеся элементы
@@ -60,6 +69,8 @@ def test_unique_elements():
     assert isinstance(l, list)
     assert len(l) == 10
     assert l == [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+
 def test_dicts():
     """
     Создайте словарь из двух списков.
@@ -71,6 +82,6 @@ def test_dicts():
     second = [1, 2, 3, 4, 5]
     # TODO создайте словарь
     d = dict(zip(first, second))
-    print(d)
+    print([*d.values()])
     assert isinstance(d, dict)
     assert len(d) == 5
